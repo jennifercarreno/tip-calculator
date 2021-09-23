@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Tip Calculator</title>
-        <link rel='stylesheet' href='styles.css'>
+        <!-- <link rel='stylesheet' href='styles.css'> -->
     </head>
 
     <body>
@@ -21,6 +21,7 @@
         <script>
 
             // defining variables
+            //const inputs = document.querySelector('.inputs')
             const billInput = document.querySelector('#input-bill');
             const tipInput = document.querySelector('#input-tip');
             const peopleInput = document.querySelector('#input-people')
@@ -28,17 +29,67 @@
             const displayTotal = document.querySelector('#display-total');
 
             // adding event listeners
-            billInput.addEventListener('input', function(e)) {
+            billInput.addEventListener('input', function(e) {
+                
                 //getting inputs and putting them in variables
-                const percent = parseInt(tipInput.value);
+                const percent = parseFloat(tipInput.value);
                 const numPeople = parseInt(peopleInput.value);
                 const bill = parseFloat(billInput.value);
+                console.log(bill);
+                console.log(percent);
 
                 //calculations
                 const tip = (bill * percent)/100;
                 const total = bill + tip;
                 const perPerson = total/numPeople;
-            }
+
+                //display tip and total
+                displayTip.innerHTML = tip;
+                displayTotal.innerHTML = total;
+
+            })
+
+            tipInput.addEventListener('input', function(e) {
+                
+                //getting inputs and putting them in variables
+                const percent = parseFloat(tipInput.value);
+                const numPeople = parseInt(peopleInput.value);
+                const bill = parseFloat(billInput.value);
+                console.log(bill);
+                console.log(percent);
+
+                //calculations
+                const tip = (bill * percent)/100;
+                const total = bill + tip;
+                const perPerson = total/numPeople;
+
+                //display tip and total
+                displayTip.innerHTML = tip;
+                displayTotal.innerHTML = total;
+
+            })
+
+            peopleInput.addEventListener('input', function(e) {
+                
+                //getting inputs and putting them in variables
+                const percent = parseFloat(tipInput.value);
+                const numPeople = parseInt(peopleInput.value);
+                const bill = parseFloat(billInput.value);
+
+                console.log(bill);
+                console.log(percent);
+                console.log(numPeople);
+
+                //calculations
+                const tip = (bill * percent)/100;
+                const total = bill + tip;
+                const perPerson = total/numPeople;
+
+                //display tip and total
+                displayTip.innerHTML = tip.toFixed(2);
+                displayTotal.innerHTML = total.toFixed(2);
+
+            })
 
 
 
