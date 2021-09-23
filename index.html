@@ -8,14 +8,24 @@
     <body>
         <header class='page-header'><h1>Tip Calculator</h1></header>
 
+        <!-- inputs -->
         <input id='input-bill' class='inputs' type="number" placeholder="0.00" min="0">
         <input id='input-tip' class='inputs' type='number' placeholder="15%" min="0" max="100">
         <input id='input-people' class='inputs' type='number' placeholder="1" min="0">
 
+        <!-- displays -->
         <h3 id='display-tip' class='displays'>Tip:</h3>
         <h3 id='display-total' class='displays'>Total:</h3>
 
+        <!-- JavaScript -->
         <script>
+
+            // defining variables
+            const billInput = document.querySelector('#input-bill');
+            const tipInput = document.querySelector('#input-tip');
+            const peopleInput = document.querySelector('#input-people')
+            const displayTip = document.querySelector('#display-tip');
+            const displayTotal = document.querySelector('#display-total');
 
         </script>
 
