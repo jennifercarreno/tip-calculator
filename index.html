@@ -2,20 +2,24 @@
 <html>
     <head>
         <title>Tip Calculator</title>
-        <!-- <link rel='stylesheet' href='styles.css'> -->
+        <link rel='stylesheet' href='styles.css'>
     </head>
 
     <body>
         <header class='page-header'><h1>Tip Calculator</h1></header>
 
         <!-- inputs -->
+        <p>Bill</p>
         <input id='input-bill' class='inputs' type="number" placeholder="0.00" min="0">
+        <p>Tip</p>
         <input id='input-tip' class='inputs' type='number' placeholder="15%" min="0" max="100">
+        <p>Number of People</p>
         <input id='input-people' class='inputs' type='number' placeholder="1" min="0">
 
         <!-- displays -->
         <h3 id='display-tip' class='displays'>Tip:</h3>
         <h3 id='display-total' class='displays'>Total:</h3>
+        <h3 id='display-per-person' class='displays'>Per Person:</h3>
 
         <!-- JavaScript -->
         <script>
@@ -27,6 +31,7 @@
             const peopleInput = document.querySelector('#input-people')
             const displayTip = document.querySelector('#display-tip');
             const displayTotal = document.querySelector('#display-total');
+            const displayPerPerson = document.querySelector('#display-per-person');
 
             // adding event listeners
             billInput.addEventListener('input', function(e) {
@@ -44,9 +49,9 @@
                 const perPerson = total/numPeople;
 
                 //display tip and total
-                displayTip.innerHTML = tip;
-                displayTotal.innerHTML = total;
-
+                displayTip.innerHTML = `Tip: ${tip.toFixed(2)}`;
+                displayTotal.innerHTML = `Total: ${total.toFixed(2)}`;
+                displayPerPerson.innerHTML = `Per Person: ${perPerson.toFixed(2)}`;
             })
 
             tipInput.addEventListener('input', function(e) {
@@ -64,8 +69,9 @@
                 const perPerson = total/numPeople;
 
                 //display tip and total
-                displayTip.innerHTML = tip;
-                displayTotal.innerHTML = total;
+                displayTip.innerHTML = `Tip: ${tip.toFixed(2)}`;
+                displayTotal.innerHTML = `Total: ${total.toFixed(2)}`;
+                displayPerPerson.innerHTML = `Per Person: ${perPerson.toFixed(2)}`;
 
             })
 
@@ -86,8 +92,9 @@
                 const perPerson = total/numPeople;
 
                 //display tip and total
-                displayTip.innerHTML = tip.toFixed(2);
-                displayTotal.innerHTML = total.toFixed(2);
+                displayTip.innerHTML = `Tip: ${tip.toFixed(2)}`;
+                displayTotal.innerHTML = `Total: ${total.toFixed(2)}`;
+                displayPerPerson.innerHTML = `Per Person: ${perPerson.toFixed(2)}`;
 
             })
 
